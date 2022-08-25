@@ -1,0 +1,22 @@
+{
+  "name": "momentum-abstract-lame",
+  "version": "1.0.0",
+  "description": "Tools for converting wav to mp3 for Momentum-sonic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "intall-lame": "cd lame-3.100 && ./configure && make && sudo make install",
+    "convert": "node index.js",
+    "work": "npm run intall-lame && npm run convert" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthusLiang/momentum-abstract-lame.git"
+  },
+  "author": "Arthus Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthusLiang/momentum-abstract-lame/issues"
+  },
+  "homepage": "https://github.com/ArthusLiang/momentum-abstract-lame#readme"
+}

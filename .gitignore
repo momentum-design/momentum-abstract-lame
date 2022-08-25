@@ -1,0 +1,8 @@
+node_modules/
+yarn.lock
+yarn-error.log
+package-lock.json
+output/
+input/
+**/.DS_Store
+.npmrc
