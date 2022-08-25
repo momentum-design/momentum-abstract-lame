@@ -40,8 +40,9 @@ class Mp3Convert {
         });
         p = folders.join(path.sep);
         let output = path.join(this.options.output, p);
-        if (!fs.existsSync(output)){
-            fs.mkdirSync(output, {recursive: true});
+        let outBase = path.dirname(output);
+        if (!fs.existsSync(outBase)){
+            fs.mkdirSync(outBase, {recursive: true});
         }
         return output;
     }
@@ -61,7 +62,7 @@ class Mp3Convert {
     exec = (input, output)=> {
         return new Promise((resolve, reject)=>{
             console.log(`=======lame -b320 ${input}  ${output}`);
-            exec(`lame -b320 ${input} ${output}`, (err, stdout, stderr) => {
+            exec(`lame -b128 ${input} ${output}`, (err, stdout, stderr) => {
                 resolve(1);
             });
         });
