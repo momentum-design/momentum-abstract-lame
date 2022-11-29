@@ -36,7 +36,7 @@ class Mp3Convert {
         let folders = path.dirname(p).split(path.sep);
         folders.push(path.basename(p));
         folders = folders.map((name)=>{
-            return name.replace(/\s|\_/g, '-').replace(/(?![^\-])([A-Z])/g, "-$1").toLowerCase().replace(this.regFileFilter, '.mp3');
+            return name.replace(/\s|\_/g, '-').replace(/(?<!^|-)([A-Z])/g, "-$1").toLowerCase().replace(this.regFileFilter, '.mp3');
         });
         p = folders.join(path.sep);
         let output = path.join(this.options.output, p);

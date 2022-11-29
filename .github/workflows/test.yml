@@ -1,0 +1,15 @@
+on:
+  pull_request:
+
+name: Test
+jobs:
+  jobAutomation:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out
+      uses: actions/checkout@master
+      with:
+          fetch-depth: 2
+    - name: Test release data
+      run: npm run test a=${{ secrets.ACTION_TOKEN }}
