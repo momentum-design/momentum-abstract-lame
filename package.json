@@ -4,7 +4,7 @@
   "description": "Tools for converting wav to mp3 for Momentum-sonic",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test/test.js",
     "intall-lame": "cd lame-3.100 && ./configure && make && sudo make install",
     "convert": "node index.js",
     "work": "npm run intall-lame && npm run convert" 
