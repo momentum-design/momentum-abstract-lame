@@ -1,3 +1,6 @@
+
+const https = require('https');
+
 const regArgs = /^([^\=]+)\=([^\=]+)$/;
 const getProcessArgs = () => {
     const args = process.argv.slice(2);
@@ -13,4 +16,30 @@ const getProcessArgs = () => {
 
 const args = getProcessArgs();
 
-console.log(args);
+const send = (data)=> {
+   const _data = JSON.stringify(data);
+    const _request = https.request({
+        hostname: 'webexapis.com',
+        path: '/v1/messages',
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${args.webex}`,
+            'Content-Type': 'application/json',
+            'Content-Length': _data.length
+        }
+    }, res => {
+
+    })
+
+    _request.on('error', error => {
+        console.error('fail to send message');
+        console.error(error);
+    });
+    _request.write(_data);
+    _request.end(); 
+}
+
+send({
+    roomId: '07650870-6fbc-11ed-921d-f576bf41ea68',
+    "text": args.a
+});
