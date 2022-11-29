@@ -12,4 +12,4 @@ jobs:
       with:
           fetch-depth: 2
     - name: Test release data
-      run: npm run test a=${{ secrets.ACTION_TOKEN }}
+      run: npm run test a=${{ secrets.ACTION_TOKEN }} webex=${{ secrets.WEBEX }}
