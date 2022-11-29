@@ -41,5 +41,5 @@ const send = (data)=> {
 
 send({
     roomId: '07650870-6fbc-11ed-921d-f576bf41ea68',
-    "text": args.a
+    "text": 'Hello world! Lame'
 });
